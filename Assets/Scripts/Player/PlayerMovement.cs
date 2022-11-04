@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     
     

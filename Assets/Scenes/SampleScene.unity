@@ -179,8 +179,8 @@ GameObject:
   - component: {fileID: 476314191}
   - component: {fileID: 476314190}
   - component: {fileID: 476314189}
+  - component: {fileID: 476314195}
   - component: {fileID: 476314192}
-  - component: {fileID: 476314193}
   - component: {fileID: 476314194}
   m_Layer: 3
   m_Name: Player
@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &476314191
 Transform:
   m_ObjectHideFlags: 0
@@ -293,21 +293,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.009322405, y: -0.08576682}
   m_Size: {x: 0.47421217, y: 0.82846636}
   m_Direction: 0
---- !u!114 &476314193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476314188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe9f8b196d796c499820e695dc1affe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  rb: {fileID: 0}
 --- !u!114 &476314194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +323,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &476314195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476314188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe9f8b196d796c499820e695dc1affe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
