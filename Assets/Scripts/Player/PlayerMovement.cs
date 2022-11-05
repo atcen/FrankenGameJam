@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerLogic playerLogic;
 
     private CapsuleCollider2D capsuleCollider2D;
+    
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +33,22 @@ public class PlayerMovement : MonoBehaviour
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         this.playerLogic = GetComponent<PlayerLogic>();
+        this.audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Run();
+
+        if (animator.GetBool("isRunning") )
+        {
+            this.audioSource.enabled = true;
+        }
+        else
+        {
+            this.audioSource.enabled = false;
+        }
     }
 
     void OnHorizontalMovement(InputValue value)
@@ -91,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 horizontal = new Vector2(this.moveInput.x * this.speed, this.rb.velocity.y);
         this.rb.velocity = horizontal;
-        }
+    }
 
 
 
