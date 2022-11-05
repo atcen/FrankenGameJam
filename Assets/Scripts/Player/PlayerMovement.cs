@@ -46,19 +46,19 @@ public class PlayerMovement : MonoBehaviour
         if (this.moveInput.x != 0)
         {
             this.animator.SetBool("isRunning", true);
+
+            if (this.moveInput.x < 0)
+            {
+                this.spriteRenderer.flipX = true;
+            }
+            else
+            {
+                this.spriteRenderer.flipX = false;
+            }
         }
         else
         {
             this.animator.SetBool("isRunning", false);
-        }
-
-        if (this.moveInput.x < 0)
-        {
-            this.spriteRenderer.flipX = true;
-        }
-        else
-        {
-            this.spriteRenderer.flipX = false;
         }
 
     }

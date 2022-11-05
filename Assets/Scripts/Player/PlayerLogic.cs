@@ -33,6 +33,9 @@ public class PlayerLogic : MonoBehaviour
 
     [SerializeField] private bool isAlive = true;
 
+    [SerializeField] GameObject fireball;
+    [SerializeField] Transform fireballSpawn;
+
     private PlayerMovement playerMovement;
 
     private Animator _animator;
@@ -71,6 +74,10 @@ public class PlayerLogic : MonoBehaviour
         if(this.activeAttackCooldown > 0) { return; }
         this.activeAttackCooldown = this.attackCooldown;
         playerMovement.Attack();
+        if (this.activeCharacter = Characters.Mage)
+        {
+            Instantiate(fireball, fireballSpawn, transformCooldown.rotation);
+        }
     }
 
     public void Heal(int healAmount)
