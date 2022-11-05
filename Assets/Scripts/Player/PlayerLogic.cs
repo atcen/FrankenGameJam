@@ -174,4 +174,3 @@ public enum Characters
     Mage,
     Knight
 }
-
