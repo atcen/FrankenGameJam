@@ -8,11 +8,16 @@ public class HealthItem : MonoBehaviour
     
     // reference to boxcollider as trigger
     private BoxCollider2D _boxCollider2D;
+    private Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
     {
         this._boxCollider2D = GetComponent<BoxCollider2D>();
+        this.rb = GetComponent<Rigidbody2D>();
+        
+        // give item random velocity upwards
+        this.rb.AddForce(new Vector2(Random.Range(-4, 4), 5), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
