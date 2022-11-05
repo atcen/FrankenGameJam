@@ -23,7 +23,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private float manaReg = 0.1f;
     [SerializeField] private float staminaReg = 0.1f;
 
-    [SerializeField] private Characters activeCharacter = Characters.Warrior;
+    [SerializeField] private Characters activeCharacter = Characters.Knight;
 
     [SerializeField] private float attackCooldown = 60f;
     [SerializeField] private float activeAttackCooldown = 0f;
@@ -68,10 +68,8 @@ public class PlayerLogic : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
-        Debug.Log("Cooldown: " + this.activeAttackCooldown);
         if(this.activeAttackCooldown > 0) { return; }
         this.activeAttackCooldown = this.attackCooldown;
-        Debug.Log("Attack");
         playerMovement.Attack();
     }
 
@@ -131,13 +129,14 @@ public class PlayerLogic : MonoBehaviour
     /*
      * Transforms between Mage and Warrior
      */
-    public void TransformPlayer()
-
+    public void TransformPlayer(Characters character)
     {
         if(this.activeTransformCooldown > 0) { return; }
-        if (this.activeCharacter == Characters.Mage)
+        if (character == activeCharacter) { return; }
+        
+        if (character == Characters.Knight)
         {
-            this.activeCharacter = Characters.Warrior;
+            this.activeCharacter = Characters.Knight;
             // Switch Animator Layer
             this._animator.SetTrigger("FadeOut");
             this._animator.SetLayerWeight(1,0);
@@ -162,9 +161,9 @@ public class PlayerLogic : MonoBehaviour
 /*
  * Enum for possible Characters
  */
-enum Characters
+public enum Characters
 {
     Mage,
-    Warrior
+    Knight
 }
 
