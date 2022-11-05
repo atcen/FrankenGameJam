@@ -79,14 +79,12 @@ public class PlayerMovement : MonoBehaviour
     
     void OnSwapToKnight(InputValue value)
     {
-        playerLogic.TransformPlayer();
-        Debug.Log("Knight");
+        playerLogic.TransformPlayer(Characters.Knight);
     }
 
     void OnSwapToMage(InputValue value)
     {
-        playerLogic.TransformPlayer();
-        Debug.Log("Mage");
+        playerLogic.TransformPlayer(Characters.Mage);
     }
 
     void Run()
@@ -101,13 +99,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         this.animator.SetTrigger("LeaveJump");
-        Debug.Log(other);
         this.animator.SetBool("isJumping", false);
     }
 
     public void Attack()
     {
-        this.animator.SetTrigger("KnightAttack");
+        this.animator.SetTrigger("Attack");
     }
 
 }
