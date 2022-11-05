@@ -66,7 +66,7 @@ public class PlayerLogic : MonoBehaviour
         this.activeAttackCooldown = attackCooldown;
     }
 
-    void heal(int healAmount)
+    public void heal(int healAmount)
     {
         if (this.health + healAmount < this.maxHealth)
         {
@@ -103,7 +103,7 @@ public class PlayerLogic : MonoBehaviour
     }
 
 
-    void takeDamage(int damage)
+    public void takeDamage(int damage)
     {
         this.health = this.health - damage;
         if (this.health <= 0)

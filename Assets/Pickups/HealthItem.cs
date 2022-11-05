@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class HealthItem : MonoBehaviour
 {
+    [SerializeField] private int healthAmount = 1;
+    
     // reference to boxcollider as trigger
-    private BoxCollider2D boxCollider2D;
+    private BoxCollider2D _boxCollider2D;
     
     // Start is called before the first frame update
     void Start()
     {
-        this.boxCollider2D = GetComponent<BoxCollider2D>();
+        this._boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -26,13 +28,13 @@ public class HealthItem : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // Disable the box collider to prevent the player from getting the health item again
-            this.boxCollider2D.enabled = false;
+            this._boxCollider2D.enabled = false;
             
             // destroy the object
             Destroy(gameObject);
             
             // add health to the player
-            // TODO: zb other.gameObject.GetComponent<PlayerLogic>().AddHealth(1);
+            other.gameObject.GetComponent<PlayerLogic>().heal(healthAmount);
         }
     }
     
