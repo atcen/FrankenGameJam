@@ -20,12 +20,15 @@ public class PlayerMovement : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private CapsuleCollider2D capsuleCollider2D;
+
     // Start is called before the first frame update
     void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -61,7 +64,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (!this.capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Platforms")))
+        {
+            return;
+        }
         this.rb.AddForce(Vector2.up * this.jumpForce, ForceMode2D.Impulse);
+        this.animator.ResetTrigger("LeaveJump");
+        this.animator.SetTrigger("EnterJump");
+        this.animator.SetBool("isJumping", true);
 
     }
     
@@ -80,5 +90,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 horizontal = new Vector2(this.moveInput.x * this.speed, this.rb.velocity.y);
         this.rb.velocity = horizontal;
         }
+
+
+
+    // when landing
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        this.animator.SetTrigger("LeaveJump");
+        Debug.Log(other);
+        this.animator.SetBool("isJumping", false);
+    }
 
 }
