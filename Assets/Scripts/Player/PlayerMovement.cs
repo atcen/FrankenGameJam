@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         Run();
         this.audioSource.clip = this.activeFootsteps[0];
 
-        if (animator.GetBool("isRunning") )
+        if (animator.GetBool("isRunning") && this.capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Platforms")))
         {
             this.audioSource.enabled = true;
         }
@@ -104,12 +104,14 @@ public class PlayerMovement : MonoBehaviour
     {
         playerLogic.TransformPlayer(Characters.Knight);
         this.activeFootsteps = this.footstepsKnight;
+        this.audioSource.clip = this.activeFootsteps[0];
     }
 
     void OnSwapToMage(InputValue value)
     {
         playerLogic.TransformPlayer(Characters.Mage);
         this.activeFootsteps = this.footstepsMage;
+        this.audioSource.clip = this.activeFootsteps[0];
     }
 
     void Run()
