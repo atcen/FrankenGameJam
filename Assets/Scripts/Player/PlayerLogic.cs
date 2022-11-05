@@ -17,16 +17,16 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private float maxStamina = 100f;
     [SerializeField] private float stamina = 100f;
 
-    [SerializeField] private float manaReg = 0.1;
-    [SerializeField] private float staminaReg = 0.1;
+    [SerializeField] private float manaReg = 0.1f;
+    [SerializeField] private float staminaReg = 0.1f;
 
-    [SerializeField] private Characters aktiveCharacter = Characters.Warrior;
+    [SerializeField] private Characters activeCharacter = Characters.Warrior;
 
-    [SerializeField] private float attackCooldown = 60;
-    [SerializeField] private float activeAttackCooldown = 0;
+    [SerializeField] private float attackCooldown = 60f;
+    [SerializeField] private float activeAttackCooldown = 0f;
 
-    [SerializeField] private float transformCooldown = 20;
-    [SerializeField] private float activeTransformCooldown = 0;
+    [SerializeField] private float transformCooldown = 20f;
+    [SerializeField] private float activeTransformCooldown = 0f;
 
 
     [SerializeField] private bool isAlive = true;
@@ -42,7 +42,7 @@ public class PlayerLogic : MonoBehaviour
     void Update()
     {
         if (!this.isAlive) { return; }
-        if (aktiveCharacter == Characters.Mage)
+        if (activeCharacter == Characters.Mage)
         {
             recoverStamina(this.staminaReg);
         }
@@ -62,8 +62,8 @@ public class PlayerLogic : MonoBehaviour
 
     void attack()
     {
-        if(activeCooldown > 0) { return; }
-        this.activeCooldown = attackCooldown;
+        if(activeAttackCooldown > 0) { return; }
+        this.activeAttackCooldown = attackCooldown;
     }
 
     void heal(int healAmount)
@@ -122,7 +122,8 @@ public class PlayerLogic : MonoBehaviour
     /*
      * Transforms between Mage and Warrior
      */
-    void transform()
+    void transformPlayer()
+
     {
         if(this.transformCooldown > 0) { return; }
         if (this.activeCharacter == Characters.Mage)
