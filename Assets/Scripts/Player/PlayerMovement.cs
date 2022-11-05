@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+    private PlayerLogic playerLogic;
 
     private CapsuleCollider2D capsuleCollider2D;
 
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        this.playerLogic = GetComponent<PlayerLogic>();
     }
 
     // Update is called once per frame
@@ -77,11 +79,13 @@ public class PlayerMovement : MonoBehaviour
     
     void OnSwapToKnight(InputValue value)
     {
+        playerLogic.TransformPlayer();
         Debug.Log("Knight");
     }
 
     void OnSwapToMage(InputValue value)
     {
+        playerLogic.TransformPlayer();
         Debug.Log("Mage");
     }
 
