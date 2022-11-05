@@ -127,6 +127,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 5
+  footstepsKnight:
+  - {fileID: 8300000, guid: eab7bce0dcb5be04ba03a02c4bde9f09, type: 3}
+  - {fileID: 8300000, guid: bcbcf0301d1d70a469a0f5a7f77aef89, type: 3}
+  - {fileID: 8300000, guid: a13e9c2bf1b3b7e428707f81c0f00be0, type: 3}
+  - {fileID: 8300000, guid: b592dd9bfe6c4f3418dae1b61e3af3e4, type: 3}
+  - {fileID: 8300000, guid: f49d8721871b16c479ce9d1833fc7fa0, type: 3}
+  footstepsMage:
+  - {fileID: 8300000, guid: 6aea6ce8329e03042963d223df26ee6c, type: 3}
+  - {fileID: 8300000, guid: 0e67dda04c790d34bb5b00d6b609896f, type: 3}
+  - {fileID: 8300000, guid: 9167421b60fa3f34fa62679a75e0f1ef, type: 3}
+  - {fileID: 8300000, guid: 0007c24b3e61aeb458ed1603323eadbe, type: 3}
+  - {fileID: 8300000, guid: aeef90ca6124dbe4d9aa180198956a4f, type: 3}
 --- !u!70 &5169327436239533504
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

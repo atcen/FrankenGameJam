@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
-
+    [FormerlySerializedAs("audioClipsKnight")] [SerializeField] private AudioClip[] footstepsKnight;
+    [FormerlySerializedAs("audioClipsMage")] [SerializeField] private AudioClip[] footstepsMage;
+    
     Vector2 moveInput;
 
     private Rigidbody2D rb;
@@ -24,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D capsuleCollider2D;
     
     private AudioSource audioSource;
+    private AudioClip[] activeFootsteps;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +39,16 @@ public class PlayerMovement : MonoBehaviour
         this.capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         this.playerLogic = GetComponent<PlayerLogic>();
         this.audioSource = GetComponent<AudioSource>();
+        
+        this.activeFootsteps = this.footstepsKnight;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Run();
+        this.audioSource.clip = this.activeFootsteps[0];
 
         if (animator.GetBool("isRunning") )
         {
@@ -92,11 +101,13 @@ public class PlayerMovement : MonoBehaviour
     void OnSwapToKnight(InputValue value)
     {
         playerLogic.TransformPlayer(Characters.Knight);
+        this.activeFootsteps = this.footstepsKnight;
     }
 
     void OnSwapToMage(InputValue value)
     {
         playerLogic.TransformPlayer(Characters.Mage);
+        this.activeFootsteps = this.footstepsMage;
     }
 
     void Run()
