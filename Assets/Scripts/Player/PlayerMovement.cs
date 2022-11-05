@@ -58,8 +58,11 @@ public class PlayerMovement : MonoBehaviour
         {
             this.audioSource.enabled = false;
         }
-        
-        transform.localScale = new Vector2(Mathf.Sign(this.rb.velocity.x), 1f);
+
+        if (this.rb.velocity.x != 0)
+        {
+                   transform.localScale = new Vector2(Mathf.Sign(this.rb.velocity.x), 1f);
+        }
 
     }
 
