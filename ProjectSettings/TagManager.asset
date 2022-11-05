@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Enemies
   - Platforms
-  - 
+  - PickupItem
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 3379004765
+    locked: 0
+  - name: PickupItem
+    uniqueID: 865835539
     locked: 0
   - name: Player
     uniqueID: 2256820849

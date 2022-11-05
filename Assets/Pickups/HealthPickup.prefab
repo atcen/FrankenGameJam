@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3390086110541070341}
   - component: {fileID: 829201435938738165}
   - component: {fileID: 1579057883978177055}
-  m_Layer: 0
+  - component: {fileID: 2140548690}
+  m_Layer: 8
   m_Name: HealthPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5989339083717994615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 625.71606, y: 327.848, z: -20.690691}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3253, y: 0.3253, z: 0.3253}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 865835539
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1270332533, guid: 3e0dfefa95f8e734a93d01653e732f20, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -163,3 +164,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4654401a9c7dd478dbc658decea413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthAmount: 1
+--- !u!95 &2140548690
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989339083717994615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d6d1fa0e64ae8842b6df4ae9c1c0714, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

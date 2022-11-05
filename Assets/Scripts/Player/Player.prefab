@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 5169327436239533533}
   - component: {fileID: 5169327436239533507}
   - component: {fileID: 5169327436239533504}
+  - component: {fileID: 215121905052584874}
   - component: {fileID: 5169327436239533506}
   - component: {fileID: 1806564128426418150}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +98,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2038146447
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 930959323, guid: 68eea24fde043aa4a8d2fda9e6630bd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,6 +141,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0.009322405, y: -0.08576682}
   m_Size: {x: 0.47421217, y: 0.82846636}
   m_Direction: 0
+--- !u!114 &215121905052584874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169327436239533532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2f87862548fd6438250c75e88f0c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 5
+  maxMana: 100
+  mana: 100
+  maxStamina: 100
+  stamina: 100
+  manaReg: 0.1
+  staminaReg: 0.1
+  activeCharacter: 1
+  attackCooldown: 60
+  activeAttackCooldown: 0
+  transformCooldown: 20
+  activeTransformCooldown: 0
+  isAlive: 1
 --- !u!114 &5169327436239533506
 MonoBehaviour:
   m_ObjectHideFlags: 0
