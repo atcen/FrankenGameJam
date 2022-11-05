@@ -74,7 +74,7 @@ public class PlayerLogic : MonoBehaviour
     {
         if(this.activeAttackCooldown > 0) { return; }
         this.activeAttackCooldown = this.attackCooldown;
-        playerMovement.Attack();
+        this.playerMovement.Attack();
         if (this.activeCharacter == Characters.Mage)
         {
             Instantiate(fireball, fireballSpawn.position, transform.rotation);
