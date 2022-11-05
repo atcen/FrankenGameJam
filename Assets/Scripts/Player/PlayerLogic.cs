@@ -31,10 +31,12 @@ public class PlayerLogic : MonoBehaviour
 
     [SerializeField] private bool isAlive = true;
 
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        this._animator = GetComponent<Animator>();
 
     }
 
@@ -122,17 +124,27 @@ public class PlayerLogic : MonoBehaviour
     /*
      * Transforms between Mage and Warrior
      */
-    void TransformPlayer()
+    public void TransformPlayer()
 
     {
-        if(this.transformCooldown > 0) { return; }
+        if(this.activeTransformCooldown > 0) { return; }
         if (this.activeCharacter == Characters.Mage)
         {
             this.activeCharacter = Characters.Warrior;
+            // Switch Animator Layer
+            this._animator.SetTrigger("FadeOut");
+            this._animator.SetLayerWeight(1,0);
+            this._animator.SetLayerWeight(0,1);
+            this._animator.SetTrigger("FadeIn");
         }
         else
         {
             this.activeCharacter = Characters.Mage;
+            // Switch Animator Layer
+            this._animator.SetTrigger("FadeOut");
+            this._animator.SetLayerWeight(0,0);
+            this._animator.SetLayerWeight(1,1);
+            this._animator.SetTrigger("FadeIn");
         }
         this.activeTransformCooldown = this.transformCooldown;
     }

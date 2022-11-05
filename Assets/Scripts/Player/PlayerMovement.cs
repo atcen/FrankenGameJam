@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+    private PlayerLogic playerLogic;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         this.rb = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.playerLogic = GetComponent<PlayerLogic>();
     }
 
     // Update is called once per frame
@@ -67,11 +69,13 @@ public class PlayerMovement : MonoBehaviour
     
     void OnSwapToKnight(InputValue value)
     {
+        playerLogic.TransformPlayer();
         Debug.Log("Knight");
     }
 
     void OnSwapToMage(InputValue value)
     {
+        playerLogic.TransformPlayer();
         Debug.Log("Mage");
     }
 
