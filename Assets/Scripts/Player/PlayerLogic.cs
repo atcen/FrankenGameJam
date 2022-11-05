@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+
 
 /*
  * Basic logic for the player;
@@ -28,16 +31,17 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private float transformCooldown = 20f;
     [SerializeField] private float activeTransformCooldown = 0f;
 
-
     [SerializeField] private bool isAlive = true;
+
+    private PlayerMovement playerMovement;
 
     private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.playerMovement = GetComponent<PlayerMovement>();
         this._animator = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -62,10 +66,13 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    void Attack()
+    public void OnAttack(InputValue value)
     {
+        Debug.Log("Cooldown: " + this.activeAttackCooldown);
         if(this.activeAttackCooldown > 0) { return; }
         this.activeAttackCooldown = this.attackCooldown;
+        Debug.Log("Attack");
+        playerMovement.Attack();
     }
 
     public void Heal(int healAmount)

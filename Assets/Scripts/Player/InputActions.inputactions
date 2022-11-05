@@ -109,6 +109,17 @@
                 },
                 {
                     "name": "",
+                    "id": "fb4dd75b-3c8b-4e1d-b483-bfcc0de84e70",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8e6ae2ac-3625-41b0-b321-e2bb694fe7f1",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
