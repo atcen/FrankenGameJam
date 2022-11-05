@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &59016779 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 813652966350427265, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
-  m_PrefabInstance: {fileID: 3457743059380843118}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &59016780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59016779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124e5975caeee764b8317de5c2a60dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &137154044
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +189,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406544157
 GameObject:
@@ -292,7 +275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59016780}
+      - m_Target: {fileID: 9170443077077787947}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
@@ -694,7 +677,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1250007514
 GameObject:
@@ -1083,7 +1066,7 @@ RectTransform:
   - {fileID: 930440648}
   - {fileID: 725105339}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1166,7 +1149,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492310053}
   m_CullTransparentMesh: 1
---- !u!1001 &3457743059380843118
+--- !u!1001 &9170443077077787946
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1179,7 +1162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6354300807118095598, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6354300807118095598, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1223,3 +1206,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
+--- !u!114 &9170443077077787947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7070096802372776688, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
+  m_PrefabInstance: {fileID: 9170443077077787946}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124e5975caeee764b8317de5c2a60dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
