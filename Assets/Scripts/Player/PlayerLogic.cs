@@ -23,7 +23,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private float manaReg = 0.1f;
     [SerializeField] private float staminaReg = 0.1f;
 
-    [SerializeField] private Characters activeCharacter = Characters.Knight;
+    [SerializeField] public Characters activeCharacter = Characters.Knight;
 
     [SerializeField] private float attackCooldown = 60f;
     [SerializeField] private float activeAttackCooldown = 0f;
