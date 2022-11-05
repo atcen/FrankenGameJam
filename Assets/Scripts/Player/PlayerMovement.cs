@@ -58,6 +58,9 @@ public class PlayerMovement : MonoBehaviour
         {
             this.audioSource.enabled = false;
         }
+        
+        transform.localScale = new Vector2(Mathf.Sign(this.rb.velocity.x), 1f);
+
     }
 
     void OnHorizontalMovement(InputValue value)
@@ -73,18 +76,14 @@ public class PlayerMovement : MonoBehaviour
             this.animator.SetBool("isRunning", false);
         }
 
-        if (this.moveInput.x < 0)
-        {
-            this.spriteRenderer.flipX = true;
-        }
-        else
-        {
-            this.spriteRenderer.flipX = false;
-        }
-
     }
 
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        this.animator.SetTrigger("LeaveJump");
+        this.animator.SetBool("isJumping", false);
+    }
+    
     void OnJump(InputValue value)
     {
         if (!this.capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Platforms")))
@@ -115,16 +114,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 horizontal = new Vector2(this.moveInput.x * this.speed, this.rb.velocity.y);
         this.rb.velocity = horizontal;
     }
-
-
-
-    // when landing
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        this.animator.SetTrigger("LeaveJump");
-        this.animator.SetBool("isJumping", false);
-    }
-
+    
     public void Attack()
     {
         this.animator.SetTrigger("Attack");
