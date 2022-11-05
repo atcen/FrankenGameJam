@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    
-    
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update

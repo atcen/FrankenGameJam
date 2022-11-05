@@ -123,6 +123,7 @@ public class PlayerLogic : MonoBehaviour
      * Transforms between Mage and Warrior
      */
     void transformPlayer()
+
     {
         if(this.transformCooldown > 0) { return; }
         if (this.activeCharacter == Characters.Mage)
