@@ -101,4 +101,9 @@ public class PlayerMovement : MonoBehaviour
         this.animator.SetBool("isJumping", false);
     }
 
+    public void Attack()
+    {
+        this.animator.SetTrigger("KnightAttack");
+    }
+
 }
