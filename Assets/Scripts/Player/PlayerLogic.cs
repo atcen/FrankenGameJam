@@ -45,6 +45,7 @@ public class PlayerLogic : MonoBehaviour
     {
         this.playerMovement = GetComponent<PlayerMovement>();
         this._animator = GetComponent<Animator>();
+        this.fireballSpawn = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -74,9 +75,9 @@ public class PlayerLogic : MonoBehaviour
         if(this.activeAttackCooldown > 0) { return; }
         this.activeAttackCooldown = this.attackCooldown;
         playerMovement.Attack();
-        if (this.activeCharacter = Characters.Mage)
+        if (this.activeCharacter == Characters.Mage)
         {
-            Instantiate(fireball, fireballSpawn, transformCooldown.rotation);
+            Instantiate(fireball, fireballSpawn.position, transform.rotation);
         }
     }
 
