@@ -42,31 +42,31 @@ public class PlayerLogic : MonoBehaviour
     void Update()
     {
         if (!this.isAlive) { return; }
-        if (activeCharacter == Characters.Mage)
+        if (this.activeCharacter == Characters.Mage)
         {
-            recoverStamina(this.staminaReg);
+            RecoverStamina(this.staminaReg);
         }
         else
         {
-            recoverMana(this.manaReg);
+            RecoverMana(this.manaReg);
         }
-        if (activeAttackCooldown > 0)
+        if (this.activeAttackCooldown > 0)
         {
-            activeAttackCooldown -= 1;
+            this.activeAttackCooldown -= 1;
         }
-        if (activeTransformCooldown > 0)
+        if (this.activeTransformCooldown > 0)
         {
-            activeTransformCooldown -= 1;
+            this.activeTransformCooldown -= 1;
         }
     }
 
-    void attack()
+    void Attack()
     {
-        if(activeAttackCooldown > 0) { return; }
-        this.activeAttackCooldown = attackCooldown;
+        if(this.activeAttackCooldown > 0) { return; }
+        this.activeAttackCooldown = this.attackCooldown;
     }
 
-    public void heal(int healAmount)
+    public void Heal(int healAmount)
     {
         if (this.health + healAmount < this.maxHealth)
         {
@@ -78,7 +78,7 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    void recoverStamina(float staminaAmount)
+    void RecoverStamina(float staminaAmount)
     {
         if (this.stamina + staminaAmount < this.maxStamina)
         {
@@ -90,7 +90,7 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    void recoverMana(float manaAmount)
+    void RecoverMana(float manaAmount)
     {
         if (this.mana + manaAmount < this.maxMana)
         {
@@ -103,17 +103,17 @@ public class PlayerLogic : MonoBehaviour
     }
 
 
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         this.health = this.health - damage;
         if (this.health <= 0)
         {
-            die();
+            this.Die();
         }
     }
 
 
-    void die()
+    public void Die()
     {
         this.isAlive = false;
     }
@@ -122,7 +122,7 @@ public class PlayerLogic : MonoBehaviour
     /*
      * Transforms between Mage and Warrior
      */
-    void transformPlayer()
+    void TransformPlayer()
 
     {
         if(this.transformCooldown > 0) { return; }

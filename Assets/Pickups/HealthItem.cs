@@ -39,7 +39,7 @@ public class HealthItem : MonoBehaviour
             Destroy(gameObject);
             
             // add health to the player
-            other.gameObject.GetComponent<PlayerLogic>().heal(healthAmount);
+            other.gameObject.GetComponent<PlayerLogic>().Heal(healthAmount);
         }
     }
     

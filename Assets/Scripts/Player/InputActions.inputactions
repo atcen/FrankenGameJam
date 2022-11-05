@@ -1,5 +1,5 @@
 {
-    "name": "Input",
+    "name": "InputActions",
     "maps": [
         {
             "name": "Player",
@@ -9,7 +9,7 @@
                     "name": "HorizontalMovement",
                     "type": "Value",
                     "id": "0075c45e-c0fc-4979-a4b2-5c410b06a9b4",
-                    "expectedControlType": "Dpad",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -210,6 +210,61 @@
                     "name": "right",
                     "id": "606c9abb-5c5b-4f2a-b748-7f646433c36c",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "ArrowKeys",
+                    "id": "fbe6318d-555a-461e-bf67-54f6fc5913a6",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMovement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f90e837e-68cf-442d-b72d-959bf9a4669b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "514a10fc-e9f4-4dbd-8cb9-374b6bbb9181",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "62b05c16-35a7-4b7d-97bb-d34b0977b695",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0d9469a9-975c-4f0b-9333-aefa2414cb52",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
