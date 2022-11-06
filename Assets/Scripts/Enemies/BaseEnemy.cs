@@ -8,6 +8,7 @@ public class BaseEnemy : MonoBehaviour
 
     [SerializeField] public int health = 1;
     [SerializeField] private GameObject healthItem;
+    [SerializeField] public Characters weakTo;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,9 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Characters from)
     {
+        if(from != weakTo) { return; }
         this.health -= damage;
         if(this.health <= 0)
         {

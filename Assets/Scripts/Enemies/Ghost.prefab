@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de569236b97a264baf842337b3893c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
   scale: 0
 --- !u!114 &5391284345839745398
 MonoBehaviour:
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   healthItem: {fileID: 5989339083717994615, guid: 22909cf0b8ef27143b7da8fe057ecff4, type: 3}
+  weakTo: 0
 --- !u!61 &424742136
 BoxCollider2D:
   m_ObjectHideFlags: 0

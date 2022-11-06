@@ -27,7 +27,7 @@ public class HammerScript: MonoBehaviour
         {
             if (enemy.gameObject.tag == "Enemies")
             {
-                enemy.gameObject.GetComponent<BaseEnemy>().TakeDamage(attack);
+                enemy.gameObject.GetComponent<BaseEnemy>().TakeDamage(attack, Characters.Knight);
             }
         }
     }

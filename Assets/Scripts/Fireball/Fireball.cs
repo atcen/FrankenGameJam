@@ -35,7 +35,7 @@ public class Fireball : MonoBehaviour
     {
         if(other.tag == "Enemies")
         {
-            other.gameObject.GetComponent<BaseEnemy>().TakeDamage(1);
+            other.gameObject.GetComponent<BaseEnemy>().TakeDamage(1,Characters.Mage);
         }
         Destroy(gameObject);
     }

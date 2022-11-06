@@ -725,13 +725,14 @@ MonoBehaviour:
   manaReg: 0.1
   staminaReg: 0.1
   activeCharacter: 1
-  attackCooldown: 60
+  attackCooldown: 0.5
   activeAttackCooldown: 0
-  transformCooldown: 20
+  transformCooldown: 1
   activeTransformCooldown: 0
   isAlive: 1
   fireball: {fileID: 2080518561186189207, guid: 7926870a18e9d8048a2468c323b85415, type: 3}
   fireballSpawn: {fileID: 0}
+  damageMaxCooldown: 1
 --- !u!114 &5169327436239533506
 MonoBehaviour:
   m_ObjectHideFlags: 0
