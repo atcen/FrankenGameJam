@@ -25,18 +25,23 @@ public class PlayerLogic : MonoBehaviour
 
     [SerializeField] public Characters activeCharacter = Characters.Knight;
 
-    [SerializeField] private float attackCooldown = 60f;
+    [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private float activeAttackCooldown = 0f;
 
-    [SerializeField] private float transformCooldown = 20f;
+    [SerializeField] private float transformCooldown = 2f;
     [SerializeField] private float activeTransformCooldown = 0f;
 
-    [SerializeField] private bool isAlive = true;
+    [SerializeField] public bool isAlive = true;
 
     [SerializeField] GameObject fireball;
     [SerializeField] Transform fireballSpawn;
 
+    float damageCooldown = 0f;
+    [SerializeField] float damageMaxCooldown = 2f;
+
     private PlayerMovement playerMovement;
+    private CapsuleCollider2D myBodyCollider;
+    private HammerScript hammer;
 
     private Animator _animator;
 
@@ -44,14 +49,17 @@ public class PlayerLogic : MonoBehaviour
     void Start()
     {
         this.playerMovement = GetComponent<PlayerMovement>();
+        this.myBodyCollider = GetComponent<CapsuleCollider2D>();
         this._animator = GetComponent<Animator>();
         this.fireballSpawn = GetComponent<Transform>();
+        this.hammer = gameObject.transform.Find("Hammer").GetComponent<HammerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!this.isAlive) { return; }
+        EnemyDetection();
         if (this.activeCharacter == Characters.Mage)
         {
             RecoverStamina(this.staminaReg);
@@ -62,22 +70,31 @@ public class PlayerLogic : MonoBehaviour
         }
         if (this.activeAttackCooldown > 0)
         {
-            this.activeAttackCooldown -= 1;
+            this.activeAttackCooldown -= Time.deltaTime;
         }
         if (this.activeTransformCooldown > 0)
         {
-            this.activeTransformCooldown -= 1;
+            this.activeTransformCooldown -= Time.deltaTime;
+        }
+        if (this.damageCooldown > 0)
+        {
+            this.damageCooldown -= Time.deltaTime;
         }
     }
 
     public void OnAttack(InputValue value)
     {
         if(this.activeAttackCooldown > 0) { return; }
-        this.activeAttackCooldown = this.attackCooldown;
         this.playerMovement.Attack();
         if (this.activeCharacter == Characters.Mage)
         {
             Instantiate(fireball, fireballSpawn.position, transform.rotation);
+            this.activeAttackCooldown = this.attackCooldown*0.5;
+        }
+        else
+        {
+            this.activeAttackCooldown = this.attackCooldown;
+            hammer.Attack(1);
         }
     }
 
@@ -120,7 +137,9 @@ public class PlayerLogic : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(damageCooldown > 0) { return; }
         this.health = this.health - damage;
+        damageCooldown = damageMaxCooldown;
         if (this.health <= 0)
         {
             this.Die();
@@ -139,7 +158,8 @@ public class PlayerLogic : MonoBehaviour
      */
     public void TransformPlayer(Characters character)
     {
-        if(this.activeTransformCooldown > 0) { return; }
+        if (!isAlive) { return; }
+        if (this.activeTransformCooldown > 0) { return; }
         if (character == activeCharacter) { return; }
         
         if (character == Characters.Knight)
@@ -162,6 +182,15 @@ public class PlayerLogic : MonoBehaviour
         }
         this.activeTransformCooldown = this.transformCooldown;
     }
+
+    private void EnemyDetection()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            this.TakeDamage(1);
+        }
+    }
+
 }
 
 

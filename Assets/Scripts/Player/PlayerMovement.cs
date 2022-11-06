@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 10f;
     [FormerlySerializedAs("audioClipsKnight")] [SerializeField] private AudioClip[] footstepsKnight;
     [FormerlySerializedAs("audioClipsMage")] [SerializeField] private AudioClip[] footstepsMage;
     
@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!this.playerLogic.isAlive)
+        {
+            this.audioSource.enabled = false; 
+            return; 
+        }
         Run();
         this.audioSource.clip = this.activeFootsteps[0];
 
@@ -68,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnHorizontalMovement(InputValue value)
     {
+        if (!this.playerLogic.isAlive) { return; }
         this.moveInput = value.Get<Vector2>();
 
         if (this.moveInput.x != 0)
@@ -89,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
     
     void OnJump(InputValue value)
     {
+        if (!this.playerLogic.isAlive) { return; }
         if (!this.capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Platforms")))
         {
             return;

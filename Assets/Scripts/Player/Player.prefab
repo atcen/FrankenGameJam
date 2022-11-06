@@ -485,6 +485,67 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2005812810142526114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4816709868806351171}
+  - component: {fileID: 5521060496778264299}
+  - component: {fileID: 242019931}
+  m_Layer: 3
+  m_Name: Hammer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4816709868806351171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005812810142526114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5169327436239533535}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &5521060496778264299
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005812810142526114}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18227696, y: 0.13422036}
+  m_Size: {x: 1.1460176, y: 1.2831388}
+  m_Direction: 0
+--- !u!114 &242019931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005812810142526114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9790ca72c7c4948981bda6e912afd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5169327436239533532
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +585,7 @@ Transform:
   m_Children:
   - {fileID: 5591141703337809146}
   - {fileID: 1978687908}
+  - {fileID: 4816709868806351171}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -613,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 5
+  jumpForce: 8
   footstepsKnight:
   - {fileID: 8300000, guid: eab7bce0dcb5be04ba03a02c4bde9f09, type: 3}
   - {fileID: 8300000, guid: bcbcf0301d1d70a469a0f5a7f77aef89, type: 3}
@@ -663,13 +725,14 @@ MonoBehaviour:
   manaReg: 0.1
   staminaReg: 0.1
   activeCharacter: 1
-  attackCooldown: 60
+  attackCooldown: 0.5
   activeAttackCooldown: 0
-  transformCooldown: 20
+  transformCooldown: 1
   activeTransformCooldown: 0
   isAlive: 1
   fireball: {fileID: 2080518561186189207, guid: 7926870a18e9d8048a2468c323b85415, type: 3}
   fireballSpawn: {fileID: 0}
+  damageMaxCooldown: 1
 --- !u!114 &5169327436239533506
 MonoBehaviour:
   m_ObjectHideFlags: 0
