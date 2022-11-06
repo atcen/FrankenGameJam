@@ -14,15 +14,6 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int health = 5;
 
-    [SerializeField] private float maxMana = 100f;
-    [SerializeField] private float mana = 100f;
-
-    [SerializeField] private float maxStamina = 100f;
-    [SerializeField] private float stamina = 100f;
-
-    [SerializeField] private float manaReg = 0.1f;
-    [SerializeField] private float staminaReg = 0.1f;
-
     [SerializeField] public Characters activeCharacter = Characters.Knight;
 
     [SerializeField] private float attackCooldown = 1f;
@@ -71,14 +62,8 @@ public class PlayerLogic : MonoBehaviour
     {
         if (!this.isAlive) { return; }
         EnemyDetection();
-        if (this.activeCharacter == Characters.Mage)
-        {
-            RecoverStamina(this.staminaReg);
-        }
-        else
-        {
-            RecoverMana(this.manaReg);
-        }
+
+
         if (this.activeAttackCooldown > 0)
         {
             this.activeAttackCooldown -= Time.deltaTime;
@@ -122,31 +107,6 @@ public class PlayerLogic : MonoBehaviour
             this.health = this.maxHealth;
         }
     }
-
-    void RecoverStamina(float staminaAmount)
-    {
-        if (this.stamina + staminaAmount < this.maxStamina)
-        {
-            this.stamina += staminaAmount;
-        }
-        else
-        {
-            this.stamina = this.maxStamina;
-        }
-    }
-
-    void RecoverMana(float manaAmount)
-    {
-        if (this.mana + manaAmount < this.maxMana)
-        {
-            this.mana += manaAmount;
-        }
-        else
-        {
-            this.mana = this.maxMana;
-        }
-    }
-
 
     public void TakeDamage(int damage)
     {
