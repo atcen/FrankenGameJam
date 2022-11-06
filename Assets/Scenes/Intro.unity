@@ -1272,7 +1272,7 @@ MonoBehaviour:
   - {fileID: 1985213492}
   - {fileID: 781512578}
   delays: 05000000050000000500000005000000
-  nextButton: {fileID: 0}
+  nextButton: {fileID: 1831424636}
 --- !u!61 &1457871090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1473,12 +1473,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "As the king noticed the underwhelmed sorceress right before his eyes he
     uttered in disbelief: \u201CWhy aren\u2019t tho impressed, old shrew? Don\u2019t
-    stand there staring. Leave with your disgusting face!\u201D\r\n\r\nThe witch
-    cursed at him: \u201CYou will regret this!\u201D In the blink of an eye she had
-    vanished into thin air.\r\n\r\nWhen the next morning came one could hear a dreadful
-    scream through the whole land. The kings\u2019 crown jewels where gone. In pain
-    and agony about his loss the fat king summoned his bravest knight to return his
-    most valuable possession. And this knight is you. Good luck!"
+    stand there staring. Leave with your disgusting face!\u201D\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d7c9b72d0c574549a53541c1db40347, type: 2}
   m_sharedMaterial: {fileID: -6507368387958002624, guid: 7d7c9b72d0c574549a53541c1db40347, type: 2}
