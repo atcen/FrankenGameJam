@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class BaseEnemy : MonoBehaviour
 {
 
-    [SerializeField] private int health;
+    [SerializeField] public int health = 1;
     [SerializeField] private GameObject healthItem;
 
     // Start is called before the first frame update

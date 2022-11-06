@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 5
+  jumpForce: 8
   footstepsKnight:
   - {fileID: 8300000, guid: eab7bce0dcb5be04ba03a02c4bde9f09, type: 3}
   - {fileID: 8300000, guid: bcbcf0301d1d70a469a0f5a7f77aef89, type: 3}

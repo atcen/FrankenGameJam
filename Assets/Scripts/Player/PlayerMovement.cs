@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 10f;
     [FormerlySerializedAs("audioClipsKnight")] [SerializeField] private AudioClip[] footstepsKnight;
     [FormerlySerializedAs("audioClipsMage")] [SerializeField] private AudioClip[] footstepsMage;
     
