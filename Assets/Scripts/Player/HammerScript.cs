@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class HammerScript: MonoBehaviour
 {
-
-    private List<Collider2D> gegner;
-
+    CapsuleCollider2D hammerCollider;
     // Start is called before the first frame update
     void Start()
     {
-        gegner = new List<Collider2D>();
+        hammerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -19,28 +18,17 @@ public class HammerScript: MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemies")
-        {
-            gegner.Add(collision);
-        }
-    }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-
-        if (collision.tag == "Enemies")
-        {
-            gegner.Remove(collision);
-        }
-    }
 
     public void Attack(int attack)
     {
-        foreach(Collider2D c in gegner)
+        Collider2D[] enemies = Physics2D.OverlapCapsuleAll(hammerCollider.bounds.center, hammerCollider.size, hammerCollider.direction, 0);
+        foreach (Collider2D enemy in enemies)
         {
-            c.gameObject.GetComponent<BaseEnemy>().TakeDamage(1);
+            if (enemy.gameObject.tag == "Enemies")
+            {
+                enemy.gameObject.GetComponent<BaseEnemy>().TakeDamage(attack);
+            }
         }
     }
 }
