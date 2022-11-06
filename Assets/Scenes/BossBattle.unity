@@ -6554,6 +6554,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Witch
       objectReference: {fileID: 0}
+    - target: {fileID: 6781485637773217226, guid: f83d758ff4b14f442b6de16cdb181177, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781485637773217226, guid: f83d758ff4b14f442b6de16cdb181177, type: 3}
+      propertyPath: m_TagString
+      value: Witch
+      objectReference: {fileID: 0}
     - target: {fileID: 6781485637773217271, guid: f83d758ff4b14f442b6de16cdb181177, type: 3}
       propertyPath: m_RootOrder
       value: 7

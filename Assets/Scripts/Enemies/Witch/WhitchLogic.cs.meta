@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 12e8ae22db3f7234e904cfb463cb3edc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fireball: {fileID: 2080518561186189207, guid: 7926870a18e9d8048a2468c323b85415, type: 3}
+  - t: {instanceID: 0}
+  - ghost: {fileID: 1971874349228382910, guid: 9af95a3dbbe9b01488c9153fda6c729f, type: 3}
+  - stone: {fileID: 1971874349228382910, guid: 10b65aae8071b4a45b742265e649e493, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
