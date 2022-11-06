@@ -44,6 +44,13 @@ public class PlayerLogic : MonoBehaviour
     private HammerScript hammer;
 
     private Animator _animator;
+    
+    // reference to audio source
+    private AudioSource[] _audioSources;
+    private AudioSource _hitSoundSource;
+    private AudioSource _attackSoundSource;
+    [SerializeField] private AudioClip[] _hitSounds;
+    [SerializeField] private AudioClip[] _fireballSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +60,10 @@ public class PlayerLogic : MonoBehaviour
         this._animator = GetComponent<Animator>();
         this.fireballSpawn = GetComponent<Transform>();
         this.hammer = gameObject.transform.Find("Hammer").GetComponent<HammerScript>();
+        this._audioSources = GetComponents<AudioSource>();
+        
+        this._hitSoundSource = _audioSources[1];
+        this._attackSoundSource = _audioSources[2];
     }
 
     // Update is called once per frame
@@ -90,6 +101,8 @@ public class PlayerLogic : MonoBehaviour
         {
             Instantiate(fireball, fireballSpawn.position, transform.rotation);
             this.activeAttackCooldown = this.attackCooldown*0.5f;
+            this._attackSoundSource.clip = this._fireballSounds[Random.Range(0, this._fireballSounds.Length)];
+            this._attackSoundSource.Play();
         }
         else
         {
@@ -139,6 +152,8 @@ public class PlayerLogic : MonoBehaviour
     {
         if(damageCooldown > 0) { return; }
         this.health = this.health - damage;
+        _hitSoundSource.clip = _hitSounds[Random.Range(0, _hitSounds.Length)];
+        _hitSoundSource.Play();
         damageCooldown = damageMaxCooldown;
         if (this.health <= 0)
         {
