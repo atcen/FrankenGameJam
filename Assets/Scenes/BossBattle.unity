@@ -6667,6 +6667,79 @@ PolygonCollider2D:
       - {x: 207.67413, y: -2.3087845}
       - {x: 225.37238, y: -2.5219898}
       - {x: 225.52869, y: 22.421162}
+--- !u!1 &1075560249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075560252}
+  - component: {fileID: 1075560251}
+  - component: {fileID: 1075560250}
+  m_Layer: 0
+  m_Name: StartBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1075560250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075560249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3983b2464145dae4a99ba7124d8f1eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1841098916}
+  _cinemachineVirtualCamera: {fileID: 1267424035}
+--- !u!61 &1075560251
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075560249}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 10.841322, y: -5.6307645}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.1104355, y: 12.261529}
+  m_EdgeRadius: 0
+--- !u!4 &1075560252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075560249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.4167888, y: -3.6771472, z: -0.86509746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1128575990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5591141703337809146, guid: df07a3e5795357247af928d03f21c13e, type: 3}
@@ -6823,7 +6896,7 @@ MonoBehaviour:
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
+    m_BlendHint: 3
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
@@ -7064,6 +7137,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 451167783, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e913e3719c723143b23acb7a947a5ee, type: 3}
+    - target: {fileID: 451167783, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 813652966350427265, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -12544,6 +12625,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!82 &1841098916 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 451167783, guid: eca9138c053762f4aafae8c429a06e1a, type: 3}
+  m_PrefabInstance: {fileID: 1613875243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085492267
 GameObject:
   m_ObjectHideFlags: 0
