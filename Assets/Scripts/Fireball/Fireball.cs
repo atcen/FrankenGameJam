@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
 
-    [SerializeField] float fireballSpeed = 5f;
+    [SerializeField] float fireballSpeed = 6f;
 
 
     Rigidbody2D rb;
@@ -19,6 +19,10 @@ public class Fireball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerMovement>();
         xspeed = player.transform.localScale.x * fireballSpeed;
+        if(xspeed < 0)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(xspeed) * 0.35f, 0.35f);
+        }
     }
 
     // Update is called once per frame
@@ -26,4 +30,14 @@ public class Fireball : MonoBehaviour
     {
         rb.velocity = new Vector2(xspeed, 0f);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<BaseEnemy>().TakeDamage(1);
+        }
+        Destroy(gameObject);
+    }
+
 }
