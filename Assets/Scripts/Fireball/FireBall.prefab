@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 309346042}
   - component: {fileID: 309346039}
   - component: {fileID: 309346041}
-  m_Layer: 0
+  - component: {fileID: 4805080084975908690}
+  m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,3 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballSpeed: 5
   xspeed: 0
+--- !u!70 &4805080084975908690
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080518561186189207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
