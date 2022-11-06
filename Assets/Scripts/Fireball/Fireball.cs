@@ -37,6 +37,10 @@ public class Fireball : MonoBehaviour
         {
             other.gameObject.GetComponent<BaseEnemy>().TakeDamage(1,Characters.Mage);
         }
+        if (other.tag == "Witch")
+        {
+            other.gameObject.GetComponent<WhitchLogic>().TakeDamage(1, Characters.Mage);
+        }
         Destroy(gameObject);
     }
 

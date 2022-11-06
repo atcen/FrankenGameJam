@@ -29,6 +29,10 @@ public class HammerScript: MonoBehaviour
             {
                 enemy.gameObject.GetComponent<BaseEnemy>().TakeDamage(attack, Characters.Knight);
             }
+            if (enemy.tag == "Witch")
+            {
+                enemy.gameObject.GetComponent<WhitchLogic>().TakeDamage(1, Characters.Mage);
+            }
         }
     }
 }

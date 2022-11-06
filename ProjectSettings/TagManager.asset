@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - Enemies
+  - Witch
   layers:
   - Default
   - TransparentFX
