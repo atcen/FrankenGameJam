@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3008115690035623499}
   - component: {fileID: 5391284345839745398}
   - component: {fileID: 424742136}
+  - component: {fileID: -5217068308132027997}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemies
@@ -181,3 +182,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.056823492, y: 0.9104843}
   m_EdgeRadius: 0
+--- !u!95 &-5217068308132027997
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971874349228382910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07f6d7f8fa6d1b34e8bcbc064e3bcbb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
