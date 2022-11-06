@@ -13211,6 +13211,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 258772471096368166, guid: df07a3e5795357247af928d03f21c13e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542139923284419173, guid: df07a3e5795357247af928d03f21c13e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5169327436239533532, guid: df07a3e5795357247af928d03f21c13e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -13257,6 +13265,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5169327436239533535, guid: df07a3e5795357247af928d03f21c13e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178245606159118619, guid: df07a3e5795357247af928d03f21c13e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178245606159118619, guid: df07a3e5795357247af928d03f21c13e, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

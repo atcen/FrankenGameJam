@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.UI;
+using Slider = UnityEngine.UIElements.Slider;
 
 
 /*
@@ -51,7 +53,7 @@ public class PlayerLogic : MonoBehaviour
     private AudioSource _attackSoundSource;
     [SerializeField] private AudioClip[] _hitSounds;
     [SerializeField] private AudioClip[] _fireballSounds;
-
+    
     // Start is called before the first frame update
     void Start()
     {
