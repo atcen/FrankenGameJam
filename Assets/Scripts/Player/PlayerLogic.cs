@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Slider = UnityEngine.UIElements.Slider;
 
@@ -167,6 +168,8 @@ public class PlayerLogic : MonoBehaviour
     public void Die()
     {
         this.isAlive = false;
+        // restart game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
