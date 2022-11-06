@@ -31,12 +31,14 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private float transformCooldown = 20f;
     [SerializeField] private float activeTransformCooldown = 0f;
 
-    [SerializeField] private bool isAlive = true;
+    [SerializeField] public bool isAlive = true;
 
     [SerializeField] GameObject fireball;
     [SerializeField] Transform fireballSpawn;
 
     private PlayerMovement playerMovement;
+    private CapsuleCollider2D myBodyCollider;
+    private HammerScript hammer;
 
     private Animator _animator;
 
@@ -44,14 +46,17 @@ public class PlayerLogic : MonoBehaviour
     void Start()
     {
         this.playerMovement = GetComponent<PlayerMovement>();
+        this.myBodyCollider = GetComponent<CapsuleCollider2D>();
         this._animator = GetComponent<Animator>();
         this.fireballSpawn = GetComponent<Transform>();
+        this.hammer = gameObject.transform.Find("Hammer").GetComponent<HammerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!this.isAlive) { return; }
+        EnemyDetection();
         if (this.activeCharacter == Characters.Mage)
         {
             RecoverStamina(this.staminaReg);
@@ -78,6 +83,10 @@ public class PlayerLogic : MonoBehaviour
         if (this.activeCharacter == Characters.Mage)
         {
             Instantiate(fireball, fireballSpawn.position, transform.rotation);
+        }
+        else
+        {
+            hammer.Attack(1);
         }
     }
 
@@ -139,7 +148,8 @@ public class PlayerLogic : MonoBehaviour
      */
     public void TransformPlayer(Characters character)
     {
-        if(this.activeTransformCooldown > 0) { return; }
+        if (!isAlive) { return; }
+        if (this.activeTransformCooldown > 0) { return; }
         if (character == activeCharacter) { return; }
         
         if (character == Characters.Knight)
@@ -162,6 +172,15 @@ public class PlayerLogic : MonoBehaviour
         }
         this.activeTransformCooldown = this.transformCooldown;
     }
+
+    private void EnemyDetection()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            this.TakeDamage(1);
+        }
+    }
+
 }
 
 
