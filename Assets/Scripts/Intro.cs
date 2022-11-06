@@ -18,7 +18,7 @@ public class Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (index < (paragraphs.Length))
+        if (index < (paragraphs.Length-1))
         {
             
             if (timeSince >= delays[index])
@@ -26,6 +26,7 @@ public class Intro : MonoBehaviour
                 paragraphs[index].SetActive(false);
                 index++;
                 paragraphs[index].SetActive(true);
+                timeSince = 0;
             }  
         }
         else
@@ -34,6 +35,7 @@ public class Intro : MonoBehaviour
         }
         
         Debug.Log(timeSince);
+        Debug.Log(index);
         timeSince += Time.deltaTime;
 
              
